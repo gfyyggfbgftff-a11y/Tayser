@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دكتور تيسير | خبير التداول والاستثمار والأسواق المالية</title>
+    
+    <!-- تحميل مكتبة Tailwind CSS للتنسيق السريع والمتجاوب -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- تحميل خطوط Google Fonts العربية (Cairo و Tajawal) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- تحميل مكتبة أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- إعدادات Tailwind المخصصة للألوان والخطوط -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0a0f1c',
+                        gold: {
+                            primary: '#d4af37',
+                            light: '#f3e5ab',
+                            dark: '#aa8529',
+                        },
+                        finance: {
+                            green: '#10b981',
+                            telegram: '#0088cc',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- تنسيقات CSS إضافية مخصصة للتأثيرات البصرية والزجاجية -->
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #0a0f1c;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(0, 136, 204, 0.07) 0%, transparent 60%);
+            min-height: 100vh;
+        }
+
+        /* تأثير البطاقة الزجاجية الفاخرة (Glassmorphism) */
+        .luxury-glass {
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.75), inset 0 1px 0 0 rgba(243, 229, 171, 0.15);
+        }
+
+        /* بطاقات داخلية زجاجية خفيفة */
+        .inner-glass {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: all 0.3s ease;
+        }
+
+        .inner-glass:hover {
+            border-color: rgba(212, 175, 55, 0.35);
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* تدرج لوني ذهبي للنصوص */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 55%, #aa8529 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* زر التوهج النابض (Pulse Glow) */
+        .btn-pulse-glow {
+            background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #d4af37 100%);
+            background-size: 200% auto;
+            color: #0a0f1c;
+            animation: pulseGold 2.2s infinite;
+            transition: all 0.4s ease;
+        }
+
+        .btn-pulse-glow:hover {
+            background-position: right center;
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.45);
+        }
+
+        @keyframes pulseGold {
+            0% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.65);
+            }
+            70% {
+                box-shadow: 0 0 0 16px rgba(212, 175, 55, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+            }
+        }
+
+        /* وميض المؤشر المباشر */
+        .live-indicator {
+            animation: liveBlink 1.6s infinite ease-in-out;
+        }
+
+        @keyframes liveBlink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.8); }
+        }
+
+        /* شبكة خلفية هندسية خفيفة */
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+            background-size: 36px 36px;
+        }
+    </style>
+</head>
+<body class="text-slate-100 flex items-center justify-center p-4 sm:p-6 md:p-8 relative overflow-x-hidden bg-grid-pattern selection:bg-gold-primary selection:text-darkbg">
+
+    <!-- الحاوية الرئيسية للبطاقة -->
+    <main class="w-full max-w-2xl mx-auto z-10">
+        
+        <!-- البطاقة الزجاجية المركزية -->
+        <div class="luxury-glass rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+            
+            <!-- إضاءة زخرفية علوية خفيفة -->
+            <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-72 bg-gold-primary/15 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- 1. الشارة العلوية (Badge) -->
+            <div class="flex justify-center mb-6">
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gold-primary/10 border border-gold-primary/30 shadow-inner">
+                    <span class="w-2.5 h-2.5 rounded-full bg-finance-green live-indicator shadow-[0_0_8px_#10b981]"></span>
+                    <span class="text-xs sm:text-sm font-bold text-gold-light tracking-wide">القناة الرسمية المعتمدة</span>
+                    <i class="fa-solid fa-circle-check text-gold-primary text-xs"></i>
+                </div>
+            </div>
+
+            <!-- 2. الشعار المركزي المدمج (الرمز المالي + التليجرام) -->
+            <div class="flex justify-center mb-6">
+                <div class="relative">
+                    <!-- الإطار الخارجي المتدرج -->
+                    <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl rotate-3 bg-gradient-to-tr from-gold-dark via-gold-light to-gold-primary p-[2px] shadow-2xl shadow-gold-primary/20">
+                        <div class="w-full h-full bg-darkbg rounded-[14px] -rotate-3 flex items-center justify-center relative">
+                            <i class="fa-solid fa-chart-line text-4xl sm:text-5xl text-gold-gradient"></i>
+                        </div>
+                    </div>
+                    <!-- أيقونة تليجرام مدمجة في الزاوية -->
+                    <div class="absolute -bottom-2 -left-2 w-10 h-10 rounded-xl bg-finance-telegram text-white flex items-center justify-center shadow-lg border-2 border-darkbg">
+                        <i class="fa-brands fa-telegram text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. العنوان الرئيسي والوصف الفرعي -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-2 tracking-tight">
+                    دكتور <span class="text-gold-gradient">تيسير</span>
+                </h1>
+                <p class="text-base sm:text-lg font-bold text-gold-light/90 mb-3">
+                    خبير التداول والاستثمار وإدارة المحافظ المالية
+                </p>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-lg mx-auto font-tajawal">
+                    بوابتك الاحترافية لفهم حركة الأسواق المالية، واقتناص الفرص الاستثمارية المدروسة وفق أعلى معايير التحليل الفني وإدارة رأس المال.
+                </p>
+            </div>
+
+            <!-- 4. شريط الإحصائيات والمميزات السريعة (3 بطاقات صغيرة) -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+                <div class="inner-glass rounded-2xl p-3.5 text-center">
+                    <div class="w-9 h-9 rounded-lg bg-finance-green/15 text-finance-green flex items-center justify-center mx-auto mb-2">
+                        <i class="fa-solid fa-bullseye text-base"></i>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-bold text-white">تحليلات يومية دقيقة</h3>
+                    <p class="text-[11px] text-slate-400 mt-0.5 font-tajawal">متابعة لحظية لحركة السوق</p>
+                </div>
+
+                <div class="inner-glass rounded-2xl p-3.5 text-center">
+                    <div class="w-9 h-9 rounded-lg bg-gold-primary/15 text-gold-primary flex items-center justify-center mx-auto mb-2">
+                        <i class="fa-solid fa-shield-halved text-base"></i>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-bold text-white">إدارة مخاطر صارمة</h3>
+                    <p class="text-[11px] text-slate-400 mt-0.5 font-tajawal">حماية وتنمية رأس المال</p>
+                </div>
+
+                <div class="inner-glass rounded-2xl p-3.5 text-center">
+                    <div class="w-9 h-9 rounded-lg bg-sky-500/15 text-sky-400 flex items-center justify-center mx-auto mb-2">
+                        <i class="fa-solid fa-chess-knight text-base"></i>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-bold text-white">صفقات واستراتيجيات</h3>
+                    <p class="text-[11px] text-slate-400 mt-0.5 font-tajawal">خطط تداول مدروسة بعناية</p>
+                </div>
+            </div>
+
+            <!-- 5. قائمة مختصرة بالقيمة المضافة للمشتركين -->
+            <div class="bg-darkbg/60 border border-white/5 rounded-2xl p-4 sm:p-5 mb-8">
+                <h2 class="text-xs sm:text-sm font-bold text-gold-light mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-crown text-gold-primary"></i>
+                    <span>ماذا ستجد داخل القناة؟</span>
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-tajawal text-slate-200">
+                    <div class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-check text-finance-green text-xs"></i>
+                        <span>تغطية شاملة لأسواق <strong>الأسهم العالمية والمحلية</strong></span>
+                    </div>
+                    <div class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-check text-finance-green text-xs"></i>
+                        <span>فرص مدروسة في <strong>العملات الرقمية (Crypto)</strong></span>
+                    </div>
+                    <div class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-check text-finance-green text-xs"></i>
+                        <span>تحليلات احترافية لأزواج <strong>الفوركس والذهب</strong></span>
+                    </div>
+                    <div class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-check text-finance-green text-xs"></i>
+                        <span>منهجيات عملية في <strong>بناء وتنمية الثروات</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. أزرار الإجراء (الانضمام المباشر + نسخ الرابط) -->
+            <div class="flex flex-col items-center gap-3.5">
+                <!-- زر الانضمام الرئيسي -->
+                <a href="https://t.me/m/gf-iZjtRN2Nk" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="btn-pulse-glow w-full py-4 px-6 rounded-2xl font-black text-base sm:text-lg flex items-center justify-center gap-3 shadow-xl cursor-pointer">
+                    <i class="fa-brands fa-telegram text-2xl"></i>
+                    <span>انضم الآن إلى قناة دكتور تيسير</span>
+                    <i class="fa-solid fa-arrow-left text-sm"></i>
+                </a>
+
+                <!-- زر ثانوي لنسخ الرابط -->
+                <button type="button" 
+                        onclick="copyTelegramLink()" 
+                        class="w-full sm:w-auto px-5 py-2.5 rounded-xl inner-glass text-xs sm:text-sm font-semibold text-slate-300 hover:text-gold-light flex items-center justify-center gap-2 cursor-pointer">
+                    <i class="fa-regular fa-copy text-gold-primary"></i>
+                    <span>نسخ رابط القناة المباشر</span>
+                </button>
+            </div>
+
+            <!-- 7. تذييل البطاقة (Footer) -->
+            <footer class="mt-8 pt-5 border-t border-white/10 text-center">
+                <p class="text-[11px] sm:text-xs text-slate-400 font-tajawal">
+                    التداول في الأسواق المالية ينطوي على مخاطر؛ نقدم لك التحليل والمعرفة لتتخذ قراراتك بثقة.
+                </p>
+                <p class="text-[11px] text-gold-primary/80 font-semibold mt-1.5">
+                    © جميع الحقوق محفوظة — دكتور تيسير للتداول والاستثمار
+                </p>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- إشعار منبثق (Toast Notification) عند نسخ الرابط -->
+    <div id="toast-notification" 
+         class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2.5 px-5 py-3 rounded-full bg-finance-green text-darkbg font-bold text-xs sm:text-sm shadow-2xl transition-all duration-300 opacity-0 translate-y-6 pointer-events-none">
+        <i class="fa-solid fa-circle-check text-base"></i>
+        <span>تم نسخ رابط قناة دكتور تيسير بنجاح!</span>
+    </div>
+
+    <!-- كود JavaScript لنسخ الرابط وإظهار الإشعار -->
+    <script>
+        function copyTelegramLink() {
+            const channelUrl = "https://t.me/m/gf-iZjtRN2Nk";
+            
+            // استخدام execCommand لضمان العمل في جميع المتصفحات وبيئات العرض
+            const tempInput = document.createElement("input");
+            tempInput.value = channelUrl;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999);
+            
+            try {
+                document.execCommand("copy");
+                triggerToast();
+            } catch (err) {
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(channelUrl).then(triggerToast);
+                }
+            }
+            
+            document.body.removeChild(tempInput);
+        }
+
+        function triggerToast() {
+            const toast = document.getElementById("toast-notification");
+            toast.classList.remove("opacity-0", "translate-y-6", "pointer-events-none");
+            toast.classList.add("opacity-100", "translate-y-0");
+
+            setTimeout(() => {
+                toast.classList.remove("opacity-100", "translate-y-0");
+                toast.classList.add("opacity-0", "translate-y-6", "pointer-events-none");
+            }, 2600);
+        }
+    </script>
+</body>
+</html>
